@@ -17,7 +17,9 @@ public class Runner {
         Lesson lesson = new Lesson("Hibernate", 1, course, instructor);
         DBHelper.save(lesson);
         Student student = new Student("Harry", 40, 1, course);
+        Student student2 = new Student("Lars", 20, 2, course);
         DBHelper.save(student);
+        DBHelper.save(student2);
 
         Mentor mentor = new Mentor("Mr Smith", student);
         DBHelper.save(mentor);
