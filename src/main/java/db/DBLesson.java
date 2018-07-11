@@ -35,7 +35,24 @@ public class DBLesson {
         return results;
     }
 
+    public static List<Student> getStudentsFromLesson(Lesson lesson){
+        List<Student> results = null;
+        session = HibernateUtil.getSessionFactory().openSession();
+        try{
+            Criteria cr = session.createCriteria(Student.class);
+            cr.add(Restrictions.eq("course", lesson.getCourse()));
+            results = cr.list();
+
+        }catch (HibernateException e){
+            e.printStackTrace();
+
+        }finally{
+            session.close();
+        }
+        return results;
+    }
 
 
-    //give a list of raids from a pirate
+
+
 }

@@ -26,6 +26,7 @@ public class Runner {
         List<Student> students = DBCourse.getStudentsFromCourse(course);
         List<Lesson> lessons = DBInstructor.getLessonsFromInstructor(instructor);
         List<Lesson> foundLessons = DBLesson.getLessonsFromStudent(student);
+        List<Student> foundStudents = DBLesson.getStudentsFromLesson(lesson);
     }
 
 }
